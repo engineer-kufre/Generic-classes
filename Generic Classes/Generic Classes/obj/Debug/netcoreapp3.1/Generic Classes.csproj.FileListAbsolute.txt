@@ -1,0 +1,13 @@
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.exe
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.deps.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.runtimeconfig.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.runtimeconfig.dev.json
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.dll
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\bin\Debug\netcoreapp3.1\Generic Classes.pdb
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.csprojAssemblyReference.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.AssemblyInfoInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.AssemblyInfo.cs
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.csproj.CoreCompileInputs.cache
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.dll
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.pdb
+C:\Users\Kufreabasi Ita\Desktop\Projects\Generic Classes\Generic Classes\obj\Debug\netcoreapp3.1\Generic Classes.genruntimeconfig.cache
