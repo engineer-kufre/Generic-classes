@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generic_Classes
 {
-    class Stack<T>
+    class GenericStack<T>
     {
         GenericLinkedList<T> stack = new GenericLinkedList<T>();
         int Count = 0;

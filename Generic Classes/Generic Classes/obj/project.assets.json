@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kufreabasi Ita\\Desktop\\Projects\\Generic Classes\\Generic Classes\\Generic Classes.csproj",
+      "projectUniqueName": "C:\\Users\\Kufreabasi Ita\\Desktop\\Coding\\Generic-classes\\Generic Classes\\Generic Classes\\Generic Classes.csproj",
       "projectName": "Generic Classes",
-      "projectPath": "C:\\Users\\Kufreabasi Ita\\Desktop\\Projects\\Generic Classes\\Generic Classes\\Generic Classes.csproj",
+      "projectPath": "C:\\Users\\Kufreabasi Ita\\Desktop\\Coding\\Generic-classes\\Generic Classes\\Generic Classes\\Generic Classes.csproj",
       "packagesPath": "C:\\Users\\Kufreabasi Ita\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kufreabasi Ita\\Desktop\\Projects\\Generic Classes\\Generic Classes\\obj\\",
+      "outputPath": "C:\\Users\\Kufreabasi Ita\\Desktop\\Coding\\Generic-classes\\Generic Classes\\Generic Classes\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kufreabasi Ita\\AppData\\Roaming\\NuGet\\NuGet.Config",

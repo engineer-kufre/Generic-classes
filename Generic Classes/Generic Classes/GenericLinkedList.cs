@@ -22,9 +22,6 @@ namespace Generic_Classes
             if (First == null)
             {
                 Last = newNode;
-                
-                //First.Next = null;
-                //First.Previous = null;
 
                 First = Last;
             }
@@ -201,10 +198,21 @@ namespace Generic_Classes
             {
                 if (index == position)
                 {
-                    newNode.Next = current;
-                    current.Previous.Next = newNode;
-                    newNode.Previous = current.Previous;
-                    current.Previous = newNode;
+                    
+                    if (position == 0)
+                    {
+                        First.Previous = newNode;
+                        newNode.Next = First;
+                        First = newNode;
+                        newNode.Previous = null;
+                    }
+                    else
+                    {
+                        newNode.Next = current;
+                        current.Previous.Next = newNode;
+                        newNode.Previous = current.Previous;
+                        current.Previous = newNode;
+                    }
                     
                     Count++;
                 }
