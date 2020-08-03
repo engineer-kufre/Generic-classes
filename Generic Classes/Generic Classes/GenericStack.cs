@@ -45,9 +45,9 @@ namespace Generic_Classes
             //shows the number of items in the stack
             return Count;
         }
-        public void Print()
+        public void Print(T item)
         {
-            Console.WriteLine("Print what?");
+            Console.WriteLine(item);
         }
     }
 }

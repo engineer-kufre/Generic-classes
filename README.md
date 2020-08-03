@@ -22,6 +22,6 @@ The LinkedList has the following methods:
 3. Check - checks if an item is present and returns a boolean
 4. Search - searches for an item and returns it
 5. IsEmpty - returns a boolean if list is empty
-6. Size - shows the number of items in the stack
+6. Size - shows the number of items in the LinkedList
 7. Insert - adds an item at the specified position
 8. Index - returns the index of an item

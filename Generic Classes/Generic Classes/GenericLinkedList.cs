@@ -151,7 +151,6 @@ namespace Generic_Classes
                 {
                     if (current.Value.Equals(item))
                     {
-                        //if(current.Previous == null)
                         if (index == 0)
                         {
                             First = current.Next;
@@ -164,14 +163,15 @@ namespace Generic_Classes
                         {
                             current.Previous.Next = current.Next;
                         }
-                        //if(current.Next == null)
-                        if (index == Count)
+                        if (index == Count - 1)
                         {
                             Last = current.Previous;
                             if (Last != null)
                             {
                                 Last.Next = null;
                             }
+
+                            
                         }
                         else
                         {
@@ -189,9 +189,11 @@ namespace Generic_Classes
         public void Insert(T item, int position)
         {
             //adds an item at the specified position
-            if (position > Count)
+            if (position >= Count)
             {
-                throw new IndexOutOfRangeException();
+                Console.WriteLine("The position entered is greater than or equal to the LinkedList size.");
+                Console.WriteLine("The position will be set to (LinkedList.Size).");
+                position = Count - 1;
             }
             LinkedListNode<T> newNode = new LinkedListNode<T>(item);
             LinkedListNode<T> current = First;
