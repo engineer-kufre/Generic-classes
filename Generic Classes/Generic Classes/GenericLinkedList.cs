@@ -70,10 +70,12 @@ namespace Generic_Classes
             {
                 if (current.Value.Equals(item))
                 {
+                    Console.WriteLine($"{item} is present in the LinkedList.");
                     return item;
                 }
                 current = current.Next;
             }
+            Console.WriteLine($"{item} does not exist in the LinkedList.");
             return -1;
         }
         public int Index(T item)

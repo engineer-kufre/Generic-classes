@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Generic_Classes
 {
-    class GenericQueue<T>
+    public class GenericQueue<T>
     {
         GenericLinkedList<T> queue = new GenericLinkedList<T>();
         int Count = 0;
