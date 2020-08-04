@@ -7,19 +7,15 @@ namespace Generic_Classes
 {
     public class GenericLinkedList<T> : ICollection<T>
     {
-        public LinkedListNode<T> First { get; private set; }
-        public LinkedListNode<T> Last { get; private set; }
-        public int Count = 0;
-        int ICollection<T>.Count => throw new NotImplementedException();
+        public LinkedListNode<T> First { get; private set; } //LinkedList first node
+        public LinkedListNode<T> Last { get; private set; } //LinkedList last node
+        public int Count = 0; //count tracker for LinkedList items
 
-        bool ICollection<T>.IsReadOnly => throw new NotImplementedException();
-
-        public int Add(T item)
+        public int Add(T item) //adds an item and returns the size
         {
-            //adds an item and returns the size
             LinkedListNode<T> newNode = new LinkedListNode<T>(item);
             
-            if (First == null)
+            if (First == null) //if List is empty
             {
                 Last = newNode;
 
@@ -36,18 +32,8 @@ namespace Generic_Classes
             return Count;
         }
 
-        void ICollection<T>.Clear()
+        public bool Check(T item) //checks if an item is present and returns a boolean
         {
-            throw new NotImplementedException();
-        }
-
-        bool ICollection<T>.Contains(T item)
-        {
-            throw new NotImplementedException();
-        }
-        public bool Check(T item)
-        {
-            //checks if an item is present and returns a boolean
             LinkedListNode<T> current = First;
 
             while (current != null)
@@ -60,10 +46,8 @@ namespace Generic_Classes
             }
             return false;
         }
-        public dynamic Search(T item)
+        public dynamic Search(T item) //searches for an item and returns it or returns -1 if item isn't found
         {
-            //searches for an item and returns it
-            //returns -1 if item isn't found
             LinkedListNode <T> current = First;
 
             while (current != null)
@@ -78,9 +62,8 @@ namespace Generic_Classes
             Console.WriteLine($"{item} does not exist in the LinkedList.");
             return -1;
         }
-        public int Index(T item)
+        public int Index(T item) //returns the index of an item or returns -1 if item isn't found
         {
-            //returns the index of an item
             LinkedListNode<T> current = First;
             int index = 0;
             while (current != null)
@@ -94,39 +77,21 @@ namespace Generic_Classes
             }
             return -1;
         }
-        public bool IsEmpty()
+        public bool IsEmpty() //returns true if linkedlist is empty and false if it isn't
         {
-            //returns true if linkedlist is empty and false if it isn't
             if (First == null)
             {
                 return true;
             }
             return false;
         }
-        public int Size()
+        public int Size() //returns LinkedList size
         {
-            //returns linkedlist<T> size
             return Count;
         }
 
-        void ICollection<T>.CopyTo(T[] array, int arrayIndex)
+        public void Remove() //removes the last list item
         {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator<T> IEnumerable<T>.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove()
-        {
-            //removes the last list item
             Last = Last.Previous;
             if (Last != null)
             {
@@ -170,8 +135,6 @@ namespace Generic_Classes
                             {
                                 Last.Next = null;
                             }
-
-                            
                         }
                         else
                         {
@@ -186,10 +149,9 @@ namespace Generic_Classes
                 return false;
             }
         }
-        public void Insert(T item, int position)
+        public void Insert(T item, int position) //adds an item at a specified position
         {
-            //adds an item at the specified position
-            if (position >= Count)
+            if (position >= Count) //if position exceeds length of the List position is reset
             {
                 Console.WriteLine("The position entered is greater than or equal to the LinkedList size.");
                 Console.WriteLine("The position will be set to (LinkedList.Size).");
@@ -226,6 +188,33 @@ namespace Generic_Classes
         }
 
         void ICollection<T>.Add(T item)
+        {
+            throw new NotImplementedException();
+        }
+        int ICollection<T>.Count => throw new NotImplementedException();
+
+        bool ICollection<T>.IsReadOnly => throw new NotImplementedException();
+        void ICollection<T>.Clear()
+        {
+            throw new NotImplementedException();
+        }
+
+        bool ICollection<T>.Contains(T item)
+        {
+            throw new NotImplementedException();
+        }
+
+        void ICollection<T>.CopyTo(T[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
         {
             throw new NotImplementedException();
         }

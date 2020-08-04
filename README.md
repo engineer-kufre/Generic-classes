@@ -2,7 +2,7 @@
 This implements generic classes for a Stack class, and a Queue and  a LinkedList.
 
 The Stack class has the following methods:
-1. IsEmpty
+1. IsEmpty - returns a boolean if list is empty
 2. Push - add items to the stack
 3. Pop - removes the last item from the stack
 4. Peek - returns the last item added
