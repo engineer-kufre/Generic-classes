@@ -8,13 +8,14 @@ namespace Generic_Classes
     {
         static void Main(string[] args)
         {
-            bool inApp = true;
+            bool inApp = true; //variable to check that the app is online
             while (inApp == true)
             {
-                inApp = RunApp(inApp);
+                inApp = RunApp(inApp); //call app helper method
             }
         }
 
+        //app helper method
         private static bool RunApp(bool inApp)
         {
             Console.WriteLine("Welcome!");
@@ -29,39 +30,42 @@ namespace Generic_Classes
             Console.WriteLine();
             if (choice == "1")
             {
-                LinkedList();
+                LinkedList(); //call LinkedList method to access GenericLinkedList class operations
             }
             if (choice == "2")
             {
-                StackMethod();
+                StackMethod(); //call StackMethod method to access GenericStack class operations
             }
             if (choice == "3")
             {
-                QueueMethod();
+                QueueMethod(); //call QueueMethod method to access GenericQueue class operations
             }
             if (choice == "0")
             {
-                inApp = false;
+                inApp = false; //sets variable to false to turn app offline
             }
 
             return inApp;
         }
 
+
+        //Queue helper method
         private static void QueueMethod()
         {
             bool inQueueClass = true;
-            while (inQueueClass == true)
+            while (inQueueClass == true) //user stays in Queue Class until set to false
             {
                 Console.WriteLine("Welcome to the Queue class!");
                 Console.WriteLine();
                 GenericQueue<string> myQueue = new GenericQueue<string>();
-                Console.Write("Your Queue is empty. Enter the value of the first item to begin: ");
+                Console.Write("Your Queue is empty. Enter the value of the first item to begin: "); //the first operation on the queue must be enqueue
                 string entry = Console.ReadLine();
                 myQueue.Enqueue(entry);
                 Console.WriteLine();
                 myQueue.Print("Item added!");
+                Console.WriteLine("--------------------------------------------------------------------------------");
                 bool inQueue = true;
-                while (inQueue == true)
+                while (inQueue == true) //user stays in the Queue operations loop until set to false
                 {
                     Console.WriteLine();
                     Console.WriteLine("The operations below are available in the Queue class: ");
@@ -74,21 +78,23 @@ namespace Generic_Classes
                     Console.Write("Please select an operation: ");
                     string selection = Console.ReadLine();
 
-                    if (selection == "1")
+                    if (selection == "1") //selection to Enqueue item
                     {
                         Console.Write("Please enter a value to enqueue: ");
                         entry = Console.ReadLine();
                         myQueue.Enqueue(entry);
                         Console.WriteLine();
                         myQueue.Print("Item added!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "2")
+                    else if (selection == "2") //selection to Dequeue item
                     {
                         string dequeued = myQueue.Dequeue();
                         Console.WriteLine();
                         myQueue.Print($"{dequeued} was removed from the Queue!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "3")
+                    else if (selection == "3") //selection to know if the Queue is empty
                     {
                         bool isEmpty = myQueue.IsEmpty();
                         if (isEmpty == true)
@@ -99,13 +105,15 @@ namespace Generic_Classes
                         {
                             myQueue.Print("The Queue is not empty.");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "4")
+                    else if (selection == "4") // selection to know the number of items in the Queue
                     {
                         int queueSize = myQueue.Size();
                         myQueue.Print($"There are {queueSize} items currently present in the Queue.");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "5")
+                    else if (selection == "5") // selection to exit the Queue operations loop
                     {
                         inQueue = false;
                     }
@@ -117,28 +125,30 @@ namespace Generic_Classes
                 Console.WriteLine();
                 Console.Write("To continue into the Queue class menu, enter YES. To exit the Queue class, enter NO: ");
                 string inClass = Console.ReadLine().ToUpper();
-                if (inClass != "YES")
+                if (inClass != "YES") // any string other than "YES" will exit the Queue class
                 {
                     inQueueClass = false;
                 }
             }
         }
 
+        //Stack helper method
         private static void StackMethod()
         {
             bool inStackClass = true;
-            while (inStackClass == true)
+            while (inStackClass == true) //user stays in Stack Class until set to false
             {
                 Console.WriteLine("Welcome to the Stack class!");
                 Console.WriteLine();
                 GenericStack<string> myStack = new GenericStack<string>();
-                Console.Write("Your Stack is empty. Enter the value of the first item to begin: ");
+                Console.Write("Your Stack is empty. Enter the value of the first item to begin: "); //the first operation on the stack must be Push
                 string entry = Console.ReadLine();
                 myStack.Push(entry);
                 Console.WriteLine();
                 myStack.Print("Item added!");
+                Console.WriteLine("--------------------------------------------------------------------------------");
                 bool inStack = true;
-                while (inStack == true)
+                while (inStack == true) //user stays in the Stack operations loop until set to false
                 {
                     Console.WriteLine();
                     Console.WriteLine("The operations below are available in the Stack class: ");
@@ -152,27 +162,30 @@ namespace Generic_Classes
                     Console.Write("Please select an operation: ");
                     string selection = Console.ReadLine();
 
-                    if (selection == "1")
+                    if (selection == "1") //selection to Push item
                     {
                         Console.Write("Please enter a value to add: ");
                         entry = Console.ReadLine();
                         myStack.Push(entry);
                         Console.WriteLine();
                         myStack.Print("Item added!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "2")
+                    else if (selection == "2") //selection to Pop item
                     {
                         string popped = myStack.Pop();
                         Console.WriteLine();
                         myStack.Print($"{popped} was removed from the stack!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "3")
+                    else if (selection == "3") //selection to return last item in the stack
                     {
                         string peeked = myStack.Peek();
                         Console.WriteLine();
                         myStack.Print($"{peeked} is currently the last item in the stack!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "4")
+                    else if (selection == "4") //selection to know if the Stack is empty
                     {
                         bool isEmpty = myStack.IsEmpty();
                         if (isEmpty == true)
@@ -183,13 +196,15 @@ namespace Generic_Classes
                         {
                             myStack.Print("The Stack is not empty.");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "5")
+                    else if (selection == "5") // selection to know the number of items in the Stack
                     {
                         int stackSize = myStack.Size();
                         myStack.Print($"There are {stackSize} items currently present in the Stack.");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "6")
+                    else if (selection == "6") // selection to exit the Stack operations loop
                     {
                         inStack = false;
                     }
@@ -201,29 +216,30 @@ namespace Generic_Classes
                 Console.WriteLine();
                 Console.Write("To continue into the Stack class menu, enter YES. To exit the Stack class, enter NO: ");
                 string inClass = Console.ReadLine().ToUpper();
-                if (inClass != "YES")
+                if (inClass != "YES") // any string other than "YES" will exit the Stack class
                 {
                     inStackClass = false;
                 }
             }
         }
 
+        //LinkedList helper method
         private static void LinkedList()
         {
             bool inLinkedListClass = true;
-            while (inLinkedListClass == true)
+            while (inLinkedListClass == true) //user stays in LinkedList Class until set to false
             {
                 Console.WriteLine("Welcome to the LinkedList class!");
                 Console.WriteLine();
                 GenericLinkedList<string> myList = new GenericLinkedList<string>();
-                Console.Write("Your LinkedList is empty. Enter the value of the first item to begin: ");
+                Console.Write("Your LinkedList is empty. Enter the value of the first item to begin: "); //the first operation on the LinkedList must be Add
                 string entry = Console.ReadLine();
                 myList.Add(entry);
                 Console.WriteLine();
                 Console.WriteLine("Item added!");
-                //Console.WriteLine(");
+                Console.WriteLine("--------------------------------------------------------------------------------");
                 bool inLinkedList = true;
-                while (inLinkedList == true)
+                while (inLinkedList == true) //user stays in the LinkedList operations loop until set to false
                 {
                     Console.WriteLine();
                     Console.WriteLine("The operations below are available in the LinkedList class: ");
@@ -240,7 +256,7 @@ namespace Generic_Classes
                     Console.Write("Please select an operation: ");
                     string selection = Console.ReadLine();
 
-                    if (selection == "1")
+                    if (selection == "1") //selection to Add item
                     {
                         Console.Write("Please enter a value to add: ");
                         entry = Console.ReadLine();
@@ -248,7 +264,7 @@ namespace Generic_Classes
                         Console.WriteLine();
                         Console.WriteLine("Item added!");
                         Console.WriteLine();
-                        Console.Write("To see the current list size, enter SIZE. To ignore, type SKIP: ");
+                        Console.Write("To see the current list size, enter SIZE. To ignore, type SKIP: "); //user can optionally view current LinkedList size
                         string returnSize = Console.ReadLine().ToUpper();
                         Console.WriteLine();
                         if (returnSize == "SIZE")
@@ -259,14 +275,15 @@ namespace Generic_Classes
                         {
                             Console.WriteLine("You decided to skip.");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "2")
+                    else if (selection == "2") //selection to Remove a specified item
                     {
                         Console.Write("Please enter a value to remove: ");
                         entry = Console.ReadLine();
                         bool removed = myList.Remove(entry);
                         Console.WriteLine();
-                        if (removed == true)
+                        if (removed == true) //program will indicate whether the item was removed or not found
                         {
                             Console.WriteLine("Item removed!");
                         }
@@ -274,8 +291,9 @@ namespace Generic_Classes
                         {
                             Console.WriteLine($"Your entry, {entry} was not found in the LinkedList!");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "3")
+                    else if (selection == "3") //selection to check that an item exists in the List
                     {
                         Console.Write("Please enter a value to check: ");
                         entry = Console.ReadLine();
@@ -289,15 +307,17 @@ namespace Generic_Classes
                         {
                             Console.WriteLine($"{entry} does not exist in the LinkedList.");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "4")
+                    else if (selection == "4") //selection to search that an item exists in the List and returns the item's value
                     {
                         Console.Write("Please enter a value to search: ");
                         entry = Console.ReadLine();
                         Console.WriteLine();
                         myList.Search(entry);
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "5")
+                    else if (selection == "5") //selection to know if the LinkedList is empty
                     {
                         bool isEmpty = myList.IsEmpty();
                         if (isEmpty == true)
@@ -308,13 +328,15 @@ namespace Generic_Classes
                         {
                             Console.WriteLine("The LinkedList is not empty.");
                         }
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "6")
+                    else if (selection == "6") // selection to know the number of items in the LinkedList
                     {
                         int listSize = myList.Size();
                         Console.WriteLine($"There are {listSize} items currently present in the LinkedList.");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "7")
+                    else if (selection == "7") // selection to insert a specified item value as a node at the specified index
                     {
                         Console.Write("Please enter a value to insert: ");
                         entry = Console.ReadLine();
@@ -324,16 +346,18 @@ namespace Generic_Classes
                         Console.WriteLine();
                         myList.Insert(entry, entryPosition);
                         Console.WriteLine("Item inserted!");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "8")
+                    else if (selection == "8") // selection to know an item's index
                     {
                         Console.Write("Please enter the query item value: ");
                         entry = Console.ReadLine();
                         Console.WriteLine();
                         int index = myList.Index(entry);
                         Console.WriteLine($"The query item, {entry} is at index {index} in the LinkedList.");
+                        Console.WriteLine("--------------------------------------------------------------------------------");
                     }
-                    else if (selection == "9")
+                    else if (selection == "9") // selection to exit the LinkedList operations loop
                     {
                         inLinkedList = false;
                     }
@@ -345,7 +369,7 @@ namespace Generic_Classes
                 Console.WriteLine();
                 Console.Write("To continue into the LinkedList class menu, enter YES. To exit the LinkedList class, enter NO: ");
                 string inClass = Console.ReadLine().ToUpper();
-                if (inClass != "YES")
+                if (inClass != "YES") // any string other than "YES" will exit the LinkedList class
                 {
                     inLinkedListClass = false;
                 }

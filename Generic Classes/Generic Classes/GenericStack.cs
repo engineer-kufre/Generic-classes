@@ -7,30 +7,29 @@ namespace Generic_Classes
     public class GenericStack<T>
     {
         GenericLinkedList<T> stack = new GenericLinkedList<T>();
-        int Count = 0;
+        int Count = 0; //count tracker for Stack items
 
-        public bool IsEmpty()
+        public bool IsEmpty() //checks that Stack is empty and returns a boolean
         {
-            //returns a boolean
             return Count == 0;
         }
-        public void Push(T item)
+
+        public void Push(T item) //add items to the stack tail
         {
-            //add items to the stack
             stack.Add(item);
             Count++;
         }
-        public T Pop()
+
+        public T Pop() //removes the last item from the stack and returns it
         {
-            //removes the last item from the stack
             LinkedListNode<T> poppedElem = stack.Last;
             stack.Remove();
             Count--;
             return poppedElem.Value;
         }
-        public T Peek()
+
+        public T Peek() //returns the last item added or the default type value if the Stack is empty
         {
-            //returns the last item added
             if (Count > 0)
             {
                 return stack.Last.Value;
@@ -40,12 +39,13 @@ namespace Generic_Classes
                 return default;
             }
         }
-        public int Size()
+
+        public int Size() //shows the number of items in the stack
         {
-            //shows the number of items in the stack
             return Count;
         }
-        public void Print(T item)
+
+        public void Print(T item) //custom method for printing to the console
         {
             Console.WriteLine(item);
         }
