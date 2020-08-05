@@ -129,6 +129,7 @@ namespace Generic_Classes
                 {
                     inQueueClass = false;
                 }
+                Console.WriteLine("--------------------------------------------------------------------------------");
             }
         }
 
@@ -182,7 +183,14 @@ namespace Generic_Classes
                     {
                         string peeked = myStack.Peek();
                         Console.WriteLine();
-                        myStack.Print($"{peeked} is currently the last item in the stack!");
+                        if (peeked == default)
+                        {
+                            myStack.Print("The stack is currently empty!");
+                        }
+                        else
+                        {
+                            myStack.Print($"{peeked} is currently the last item in the stack!");
+                        }
                         Console.WriteLine("--------------------------------------------------------------------------------");
                     }
                     else if (selection == "4") //selection to know if the Stack is empty
@@ -220,6 +228,7 @@ namespace Generic_Classes
                 {
                     inStackClass = false;
                 }
+                Console.WriteLine("--------------------------------------------------------------------------------");
             }
         }
 
@@ -264,7 +273,7 @@ namespace Generic_Classes
                         Console.WriteLine();
                         Console.WriteLine("Item added!");
                         Console.WriteLine();
-                        Console.Write("To see the current list size, enter SIZE. To ignore, type SKIP: "); //user can optionally view current LinkedList size
+                        Console.Write("To see the current list size, enter SIZE. To ignore, enter SKIP: "); //user can optionally view current LinkedList size
                         string returnSize = Console.ReadLine().ToUpper();
                         Console.WriteLine();
                         if (returnSize == "SIZE")
@@ -320,6 +329,7 @@ namespace Generic_Classes
                     else if (selection == "5") //selection to know if the LinkedList is empty
                     {
                         bool isEmpty = myList.IsEmpty();
+                        Console.WriteLine();
                         if (isEmpty == true)
                         {
                             Console.WriteLine("The LinkedList is empty.");
@@ -333,6 +343,7 @@ namespace Generic_Classes
                     else if (selection == "6") // selection to know the number of items in the LinkedList
                     {
                         int listSize = myList.Size();
+                        Console.WriteLine();
                         Console.WriteLine($"There are {listSize} items currently present in the LinkedList.");
                         Console.WriteLine("--------------------------------------------------------------------------------");
                     }
@@ -354,7 +365,14 @@ namespace Generic_Classes
                         entry = Console.ReadLine();
                         Console.WriteLine();
                         int index = myList.Index(entry);
-                        Console.WriteLine($"The query item, {entry} is at index {index} in the LinkedList.");
+                        if (index == -1)
+                        {
+                            Console.WriteLine($"The query item, {entry} does not exist in the LinkedList.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"The query item, {entry} is at index {index} in the LinkedList.");
+                        }
                         Console.WriteLine("--------------------------------------------------------------------------------");
                     }
                     else if (selection == "9") // selection to exit the LinkedList operations loop
